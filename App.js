@@ -1,7 +1,9 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import ModuleListScreen from './src/components/screens/ModuleListScreen';
-import { Component } from 'react';
+
+const Stack = createNativeStackNavigator();
+
 
 export const App = () => {
   // Initialisations -------------------------------------------------
