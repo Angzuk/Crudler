@@ -9,7 +9,7 @@ export const ModuleListScreen = () => {
   return (
     <View style={styles.container}>
       <Text>List</Text>
-      <StatusBar style="auto" />
+      <StatusBar style="light" />
     </View>
   );
 }
