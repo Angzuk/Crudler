@@ -1,5 +1,7 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import ModuleListScreen from './src/components/screens/ModuleListScreen';
+import { Component } from 'react';
 
 export const App = () => {
   // Initialisations -------------------------------------------------
@@ -7,10 +9,11 @@ export const App = () => {
   // Handlers --------------------------------------------------------
   // View ------------------------------------------------------------
   return (
-    <View style={styles.container}>
-      <Text>Hello World!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator initalRouteName="ModuleListScreen">
+
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
