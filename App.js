@@ -11,7 +11,11 @@ export const App = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator initalRouteName="ModuleListScreen">
-
+        <Stack.Screen 
+          name='ModuleListScreen'
+          component={ModuleListScreen}
+          options={{ title: 'List modules' }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
