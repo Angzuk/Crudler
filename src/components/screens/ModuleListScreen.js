@@ -11,19 +11,33 @@ const ModuleListScreen = () => {
   // View ------------------------------------------------------------
   return (
     <Screen>
-      {
-        modules.map((modules)=>{
-          return(
-            <View key={modules.ModuleCode}>
-              <Text>{modules.ModuleCode} {modules.ModuleName}</Text>
-            </View>
-          )
-        })
-      }
+      <View style={styles.container}>
+        {
+          modules.map((modules)=>{
+            return(
+              <View key={modules.ModuleCode} style={styles.item}>
+                <Text style={styles.text}>
+                  {modules.ModuleCode} {modules.ModuleName}
+                </Text>
+              </View>
+            )
+          })
+        }
+      </View>
     </Screen>
   );
 }
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  container: {},
+  item: {
+    paddingVertical: 15,
+    borderTopWidth: 1,
+    borderColor: 'lightgray',
+  },
+  text: {
+    fontSize: 16,
+  },
+});
 
 export default ModuleListScreen;
