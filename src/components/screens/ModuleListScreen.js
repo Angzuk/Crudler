@@ -14,7 +14,7 @@ const ModuleListScreen = () => {
       {
         modules.map((modules)=>{
           return(
-            <View>
+            <View key={modules.ModuleCode}>
               <Text>{modules.ModuleCode} {modules.ModuleName}</Text>
             </View>
           )
