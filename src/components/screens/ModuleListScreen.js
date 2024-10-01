@@ -1,14 +1,25 @@
-import { StyleSheet, Text } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 import Screen from '../layout/Screen';
+
+import initialModules from '../../data/module';
 
 const ModuleListScreen = () => {
   // Initialisations -------------------------------------------------
+  const modules = initialModules;
   // State -----------------------------------------------------------
   // Handlers --------------------------------------------------------
   // View ------------------------------------------------------------
   return (
     <Screen>
-      <Text>List</Text>
+      {
+        modules.map((modules)=>{
+          return(
+            <View>
+              <Text>{modules.ModuleCode} {modules.ModuleName}</Text>
+            </View>
+          )
+        })
+      }
     </Screen>
   );
 }
