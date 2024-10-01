@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { ScrollView, StyleSheet, Text, View } from 'react-native';
 import Screen from '../layout/Screen';
 
 import initialModules from '../../data/module';
@@ -11,7 +11,7 @@ const ModuleListScreen = () => {
   // View ------------------------------------------------------------
   return (
     <Screen>
-      <View style={styles.container}>
+      <ScrollView style={styles.container}>
         {
           modules.map((modules)=>{
             return(
@@ -23,7 +23,7 @@ const ModuleListScreen = () => {
             )
           })
         }
-      </View>
+      </ScrollView>
     </Screen>
   );
 }
