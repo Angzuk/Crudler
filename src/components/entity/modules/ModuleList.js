@@ -5,7 +5,6 @@ const ModuleList = ({modules, onSelect}) => {
 // Initialisations ---------------------
 // State -------------------------------
 // Handlers ----------------------------
-const
 // View --------------------------------
 return (
     <ScrollView style={styles.container}>
