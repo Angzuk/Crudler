@@ -10,12 +10,12 @@ const ModuleListScreen = () => {
 
   // State -----------------------------------------------------------
   // Handlers --------------------------------------------------------
-  const handleSelect = () => alert("Item selected");
+  const handleSelect = (module) => alert(`Item ${module.ModuleCode} selected`);
 
   // View ------------------------------------------------------------
   return (
     <Screen>
-      < ModuleList modules={modules} onSelect={}/>
+      < ModuleList modules={modules} onSelect={handleSelect}/>
     </Screen>
   );
 }
