@@ -15,7 +15,7 @@ const ModuleListScreen = () => {
   // View ------------------------------------------------------------
   return (
     <Screen>
-      < ModuleList />
+      < ModuleList modules={modules}/>
     </Screen>
   );
 }
