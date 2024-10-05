@@ -15,7 +15,7 @@ const ModuleListScreen = () => {
   // View ------------------------------------------------------------
   return (
     <Screen>
-      < ModuleList modules={modules}/>
+      < ModuleList modules={modules} onSelect={}/>
     </Screen>
   );
 }
