@@ -1,4 +1,4 @@
-import { ScrollView, StyleSheet } from 'react-native';
+import { StyleSheet } from 'react-native';
 import Screen from '../layout/Screen';
 import ModuleItem from '../entity/modules/ModuleItem';
 
@@ -15,15 +15,7 @@ const ModuleListScreen = () => {
   // View ------------------------------------------------------------
   return (
     <Screen>
-      <ScrollView style={styles.container}>
-        {
-          modules.map((module)=>{
-            return(
-              < ModuleItem key={module.ModuleCode} module={module} onSelect={handleSelect}/>
-            )
-          })
-        }
-      </ScrollView>
+      < ModuleList />
     </Screen>
   );
 }

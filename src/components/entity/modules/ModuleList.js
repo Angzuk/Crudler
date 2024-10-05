@@ -1,4 +1,4 @@
-import { StyleSheet } from 'react-native';
+import { ScrollView, StyleSheet } from 'react-native';
 
 const ModuleList = () => {
 // Initialisations ---------------------
@@ -6,7 +6,16 @@ const ModuleList = () => {
 // Handlers ----------------------------
 // View --------------------------------
 return (
-    );
+    <ScrollView style={styles.container}>
+        {
+          modules.map((module)=>{
+            return(
+              < ModuleItem key={module.ModuleCode} module={module} onSelect={handleSelect}/>
+            )
+          })
+        }
+    </ScrollView>
+);
 };
 
 const styles = StyleSheet.create({});
