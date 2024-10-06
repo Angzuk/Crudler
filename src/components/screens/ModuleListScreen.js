@@ -11,7 +11,10 @@ const ModuleListScreen = () => {
   // State -----------------------------------------------------------
   // Handlers --------------------------------------------------------
   const handleDelete = (module) => {
-    modules = modules.filter ( (item) => {} );
+    modules = modules.filter ( (item) => {
+      if(item.ModuleID !== module.ModuleID) return true; 
+      else return false;
+    } );
 
     console.log(`After deleting ${module.ModuleCode}, the array modules has length ${modules.length}`);
   };
