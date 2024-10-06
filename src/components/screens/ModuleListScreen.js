@@ -9,9 +9,9 @@ const ModuleListScreen = () => {
   // Initialisations -------------------------------------------------
   // State -----------------------------------------------------------
   const [modules, setModules] = useState(initialModules);
-  
+
   // Handlers --------------------------------------------------------
-  const handleDelete = (module) => modules = modules.filter ( (item) => item.ModuleID !== module.ModuleID);
+  const handleDelete = (module) => setModules( modules.filter ( (item) => item.ModuleID !== module.ModuleID) );
 
   // View ------------------------------------------------------------
   return (
