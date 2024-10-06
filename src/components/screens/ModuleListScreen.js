@@ -6,7 +6,7 @@ import initialModules from '../../data/modules';
 
 const ModuleListScreen = () => {
   // Initialisations -------------------------------------------------
-  const modules = initialModules;
+  let modules = initialModules;
 
   // State -----------------------------------------------------------
   // Handlers --------------------------------------------------------
