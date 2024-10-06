@@ -10,7 +10,9 @@ const ModuleListScreen = () => {
 
   // State -----------------------------------------------------------
   // Handlers --------------------------------------------------------
-  const handleDelete = (module) => alert(`Item ${module.ModuleCode} selected`);
+  const handleDelete = (module) => {
+    modules = modules.filter ( () => {} );
+  };
 
   // View ------------------------------------------------------------
   return (
