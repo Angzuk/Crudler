@@ -12,22 +12,25 @@ const ModuleViewScreen = ({ navigation, route }) => {
   // View ------------------------------------------------------------
   return (
     <Screen>
+      <View style={styles.container}>
+        < FullWidthImage source={{ uri: module.ModuleImage }} style={styles.image} />
 
-      < FullWidthImage source={{ uri: module.ModuleImage }} style={styles.image} />
-
-      <View style={styles.infoTray}>
-        <Text style={styles.boldText}>
-          {module.ModuleCode} {module.ModuleName}
-        </Text>
-        <Text style={styles.text}>Level {module.ModuleLevel}</Text>
-        <Text style={styles.text}>{module.ModuleLeaderName} <Text style={styles.dimText}> (Module Leader)</Text></Text>
+        <View style={styles.infoTray}>
+          <Text style={styles.boldText}>
+            {module.ModuleCode} {module.ModuleName}
+          </Text>
+          <Text style={styles.text}>Level {module.ModuleLevel}</Text>
+          <Text style={styles.text}>{module.ModuleLeaderName} <Text style={styles.dimText}> (Module Leader)</Text></Text>
+        </View>
       </View>
-
     </Screen>
   );
 }
 
 const styles = StyleSheet.create({
+  container: {
+    gap: 15,
+  },
   image: {
     borderRadius: 3,
   },
