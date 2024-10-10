@@ -17,7 +17,7 @@ const ModuleListScreen = ({navigation}) => {
   // View ------------------------------------------------------------
   return (
     <Screen>
-      < ModuleList modules={modules} onSelect={handleDelete}/>
+      < ModuleList modules={modules} onSelect={handleSelect}/>
     </Screen>
   );
 }
