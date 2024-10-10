@@ -10,7 +10,7 @@ const ModuleViewScreen = ({ navigation, route }) => {
   // View ------------------------------------------------------------
   return (
     <Screen>
-      <View>
+      <View style={styles.infoTray}>
         <Text style={styles.boldText}>
           {module.ModuleCode} {module.ModuleName}
         </Text>
@@ -22,6 +22,9 @@ const ModuleViewScreen = ({ navigation, route }) => {
 }
 
 const styles = StyleSheet.create({
+  infoTray: {
+    gap: 5,
+  },
   text: {
     fontSize: 16,
   },
