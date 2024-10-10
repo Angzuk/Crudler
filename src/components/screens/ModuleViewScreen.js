@@ -10,13 +10,26 @@ const ModuleViewScreen = ({ navigation, route }) => {
   // View ------------------------------------------------------------
   return (
     <Screen>
-      <Text>{module.ModuleCode} {module.ModuleName}</Text>
-      <Text>Level {module.ModuleLevel}</Text>
-      <Text>{module.ModuleLeaderName} (Module Leader)</Text>
+      <Text style={styles.boldText}>
+        {module.ModuleCode} {module.ModuleName}
+      </Text>
+      <Text style={styles.text}>Level {module.ModuleLevel}</Text>
+      <Text style={styles.text}>{module.ModuleLeaderName} (Module Leader)</Text>
     </Screen>
   );
 }
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  text: {
+    fontSize: 16,
+  },
+  boldText: {
+    fontSize: 16,
+    fontWeight: 'bold',
+  },
+  dimText: {
+    color: 'grey',
+  },
+});
 
 export default ModuleViewScreen;
