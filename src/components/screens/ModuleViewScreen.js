@@ -1,4 +1,4 @@
-import { StyleSheet, Text } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 import Screen from '../layout/Screen';
 
 const ModuleViewScreen = ({ navigation, route }) => {
@@ -10,11 +10,13 @@ const ModuleViewScreen = ({ navigation, route }) => {
   // View ------------------------------------------------------------
   return (
     <Screen>
-      <Text style={styles.boldText}>
-        {module.ModuleCode} {module.ModuleName}
-      </Text>
-      <Text style={styles.text}>Level {module.ModuleLevel}</Text>
-      <Text style={styles.text}>{module.ModuleLeaderName} <Text style={styles.dimText}> (Module Leader)</Text></Text>
+      <View>
+        <Text style={styles.boldText}>
+          {module.ModuleCode} {module.ModuleName}
+        </Text>
+        <Text style={styles.text}>Level {module.ModuleLevel}</Text>
+        <Text style={styles.text}>{module.ModuleLeaderName} <Text style={styles.dimText}> (Module Leader)</Text></Text>
+      </View>
     </Screen>
   );
 }
