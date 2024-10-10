@@ -5,12 +5,13 @@ import ModuleList from '../entity/modules/ModuleList';
 
 import initialModules from '../../data/modules';
 
-const ModuleListScreen = () => {
+const ModuleListScreen = ({navigation}) => {
   // Initialisations -------------------------------------------------
   // State -----------------------------------------------------------
   const [modules, setModules] = useState(initialModules);
 
   // Handlers --------------------------------------------------------
+  const handleSelect = () => {};
   const handleDelete = (module) => setModules( modules.filter ( (item) => item.ModuleID !== module.ModuleID) );
 
   // View ------------------------------------------------------------
