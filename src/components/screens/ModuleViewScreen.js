@@ -10,7 +10,9 @@ const ModuleViewScreen = ({ navigation, route }) => {
   // View ------------------------------------------------------------
   return (
     <Screen>
-      <Text>View {module.ModuleCode} {module.ModuleName}</Text>
+      <Text>{module.ModuleCode} {module.ModuleName}</Text>
+      <Text>Level {module.ModuleLevel}</Text>
+      <Text>{module.ModuleLeaderName} (Module Leader)</Text>
     </Screen>
   );
 }
