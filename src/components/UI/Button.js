@@ -1,4 +1,4 @@
-import { Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
+import { Pressable, StyleSheet, Text } from "react-native";
 
 const Button = ({label, onClick}) => {
     // Initialisations ---------------------
@@ -6,12 +6,26 @@ const Button = ({label, onClick}) => {
     // Handlers ----------------------------
     // View --------------------------------
     return (
-        <Pressable onPress={onClick}>
-            <Text>{label}</Text>
+        <Pressable onPress={onClick} style={styles.button}>
+            <Text style={styles.label}>{label}</Text>
         </Pressable>
     );
 };
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+    button: {
+        borderWidth: 1,
+        borderRadius: 7,
+        borderColor: 'grey',
+        backgroundColor: 'white',
+        alignItems: 'center',
+        justifyContent: 'center',
+        padding: 3,
+        flex: 1,
+    },
+    label: {
+        fontSize: 16,
+    },
+});
 
 export default Button;
