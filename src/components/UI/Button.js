@@ -14,6 +14,7 @@ const Button = ({label, onClick}) => {
 
 const styles = StyleSheet.create({
     button: {
+        minHeight: 50,
         borderWidth: 1,
         borderRadius: 7,
         borderColor: 'grey',
