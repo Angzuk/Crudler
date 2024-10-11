@@ -13,3 +13,4 @@ const Component = () => {
 const styles = StyleSheet.create({});
 
 export default Component;
+
