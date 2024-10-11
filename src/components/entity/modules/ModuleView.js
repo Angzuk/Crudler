@@ -19,7 +19,7 @@ return (
         <Text style={styles.text}>{module.ModuleLeaderName} <Text style={styles.dimText}> (Module Leader)</Text></Text>
       </View>
       <ButtonTray>
-          <Button label = 'Modify'/>
+          <Button icon={<Text>M</Text>} label = 'Modify'/>
           <Button label = 'Delete' styleButton={{backgroundColor: 'mistyrose'}} styleLabel={{color: 'red'}}/>
         </ButtonTray>
     </View>

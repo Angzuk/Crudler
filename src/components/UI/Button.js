@@ -1,12 +1,15 @@
 import { Pressable, StyleSheet, Text, View } from "react-native";
 
-export const Button = ({label, onClick, styleLabel, styleButton}) => {
+export const Button = ({label, icon, onClick, styleLabel, styleButton}) => {
     // Initialisations ---------------------
     // State -------------------------------
     // Handlers ----------------------------
     // View --------------------------------
     return (
         <Pressable onPress={onClick} style={[styles.button, styleButton]}>
+            {
+                icon ? icon : null 
+            }
             <Text style={[styles.label, styleLabel]}>{label}</Text>
         </Pressable>
     );
