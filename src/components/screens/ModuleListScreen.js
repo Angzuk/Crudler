@@ -11,7 +11,10 @@ const ModuleListScreen = ({navigation}) => {
   const [modules, setModules] = useState(initialModules);
 
   // Handlers --------------------------------------------------------
-  const handleDelete = (module) => setModules( modules.filter ( (item) => item.ModuleID !== module.ModuleID) );
+  const handleDelete = (module) => {
+    setModules( modules.filter ( (item) => item.ModuleID !== module.ModuleID) );
+    console.log(`Module ${module.ModuleCode} deleted`);
+  };
   const handleSelect = (module) => navigation.navigate('ModuleViewScreen', { module, handleDelete });
   // View ------------------------------------------------------------
   return (
