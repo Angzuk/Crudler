@@ -20,6 +20,7 @@ const ModuleAddScreen = ({navigation, route}) => {
   // State -----------------------------------------------------------
   // Handlers --------------------------------------------------------
   const handleAdd = () => onAdd(defaultModule);
+  const handleCancel = navigation.goBack;
 
   // View ------------------------------------------------------------
   return (
@@ -27,6 +28,7 @@ const ModuleAddScreen = ({navigation, route}) => {
       <Text>Add</Text>
       <ButtonTray>
         <Button label="Add" icon={<Icons.Add/>} onClick={handleAdd} />
+        <Button label="Cancel" onClick={handleCancel} />
       </ButtonTray>
     </Screen>
   );
