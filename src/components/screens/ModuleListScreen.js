@@ -2,7 +2,8 @@ import { useState } from 'react';
 import { LogBox, StyleSheet } from 'react-native';
 import Screen from '../layout/Screen';
 import ModuleList from '../entity/modules/ModuleList';
-
+import Icons from '../UI/Icons';
+import { Button, ButtonTray } from '../UI/Button';
 import initialModules from '../../data/modules';
 
 const ModuleListScreen = ({navigation}) => {
@@ -23,6 +24,9 @@ const ModuleListScreen = ({navigation}) => {
   // View ------------------------------------------------------------
   return (
     <Screen>
+      <ButtonTray>
+        <Button label="Add" icon={<Icons.Add/>} />
+      </ButtonTray>
       < ModuleList modules={modules} onSelect={handleSelect}/>
     </Screen>
   );
