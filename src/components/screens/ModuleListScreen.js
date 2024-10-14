@@ -34,7 +34,7 @@ const ModuleListScreen = ({navigation}) => {
   return (
     <Screen>
       <ButtonTray>
-        <Button label="Add" icon={<Icons.Add/>} onSelect={gotoAddScreen} />
+        <Button label="Add" icon={<Icons.Add/>} onClick={gotoAddScreen} />
       </ButtonTray>
       < ModuleList modules={modules} onSelect={gotoViewScreen}/>
     </Screen>
