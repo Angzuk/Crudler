@@ -16,6 +16,8 @@ const ModuleListScreen = ({navigation}) => {
   const handleDelete = (module) =>
     setModules( modules.filter ( (item) => item.ModuleID !== module.ModuleID) );
 
+  const handleAdd = (module) => setModules([...modules, module]);
+
   const onDelete = (module) => {
     handleDelete(module);
     navigation.goBack();
