@@ -22,12 +22,19 @@ const ModuleListScreen = ({navigation}) => {
     handleDelete(module);
     navigation.goBack();
   };
+
+  const onAdd = (module) => {
+    handleAdd(module);
+    navigation.goBack();
+  };
+
   const handleSelect = (module) => navigation.navigate('ModuleViewScreen', { module, onDelete });
+  const gotoAddScreen = () => navigation.navigate('ModuleAddScreen', { onAdd });
   // View ------------------------------------------------------------
   return (
     <Screen>
       <ButtonTray>
-        <Button label="Add" icon={<Icons.Add/>} />
+        <Button label="Add" icon={<Icons.Add/>} onSelect={gotoAddScreen} />
       </ButtonTray>
       < ModuleList modules={modules} onSelect={handleSelect}/>
     </Screen>
