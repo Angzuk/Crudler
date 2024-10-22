@@ -43,7 +43,20 @@ const ModuleAddScreen = ({navigation, route}) => {
         <TextInput value={module.ModuleName} onChangeText={(value) => handleChange('ModuleName',value)} style={styles.itemTextInput} />
        </View>
 
-       <Text>{module.ModuleCode} {module.ModuleName}</Text>
+       <View style={styles.item} >
+        <Text style={styles.itemLabel} > Module level </Text>
+        <TextInput value={module.ModuleLevel} onChangeText={(value) => handleChange('ModuleLevel',value)} style={styles.itemTextInput} />
+       </View>
+
+       <View style={styles.item} >
+        <Text style={styles.itemLabel} > Module leader </Text>
+        <TextInput value={module.ModuleLeaderName} onChangeText={(value) => handleChange('ModuleLeaderName',value)} style={styles.itemTextInput} />
+       </View>
+
+       <View style={styles.item} >
+        <Text style={styles.itemLabel} > Module image URL </Text>
+        <TextInput value={module.ModuleImage} onChangeText={(value) => handleChange('ModuleImage',value)} style={styles.itemTextInput} />
+       </View>
 
       <ButtonTray>
         <Button label="Add" icon={<Icons.Add/>} onClick={handleAdd} />
