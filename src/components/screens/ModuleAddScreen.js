@@ -1,23 +1,28 @@
+import { useState } from 'react';
 import { StyleSheet, Text, TextInput, View } from 'react-native';
 import Screen from '../layout/Screen';
 import Icons from '../UI/Icons';
 import { Button, ButtonTray } from '../UI/Button';
 
 const defaultModule = {
-  ModuleID: Math.floor(100000 + Math.random() * 900000),
-  ModuleCode: 'CI6330',
-  ModuleName: 'Mobile Application Development',
-  ModuleLevel: 6,
-  ModuleLeaderID: 1,
-  ModuleLeaderName: 'Graeme JONES',
-  ModuleImage: 'https://images.freeimages.com/images/small-previews/cf5/cellphone-1313194.jpg',
+  ModuleID: null, 
+  ModuleCode: null,
+  ModuleName: null,
+  ModuleLevel: null,
+  ModuleLeaderID: null,
+  ModuleLeaderName: null,
+  ModuleImage: null, 
 }
 
 const ModuleAddScreen = ({navigation, route}) => {
   // Initialisations -------------------------------------------------
   const { onAdd } = route.params;
+  defaultModule.ModuleID = Math.floor(100000 + Math.random() * 900000);
+  defaultModule.ModuleImage = 'https://images.freeimages.com/images/small-previews/cf5/cellphone-1313194.jpg';
 
   // State -----------------------------------------------------------
+  const [module, setModule] = useState(defaultModule);
+
   // Handlers --------------------------------------------------------
   const handleAdd = () => onAdd(defaultModule);
   const handleCancel = navigation.goBack;
@@ -27,7 +32,7 @@ const ModuleAddScreen = ({navigation, route}) => {
     <Screen>
        <View style={styles.item} >
         <Text style={styles.itemLabel} > Module code </Text>
-        <TextInput style={styles.itemTextInput} />
+        <TextInput value={module.ModuleCode} style={styles.itemTextInput} />
        </View>
       <ButtonTray>
         <Button label="Add" icon={<Icons.Add/>} onClick={handleAdd} />
