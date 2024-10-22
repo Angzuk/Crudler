@@ -24,16 +24,27 @@ const ModuleAddScreen = ({navigation, route}) => {
   const [module, setModule] = useState(defaultModule);
 
   // Handlers --------------------------------------------------------
-  const handleAdd = () => onAdd(defaultModule);
+  const handleAdd = () => onAdd(module);
   const handleCancel = navigation.goBack;
+
+  const handleChange = (field, value) => setModule( {...module, [field]: value } );
 
   // View ------------------------------------------------------------
   return (
     <Screen>
+
        <View style={styles.item} >
         <Text style={styles.itemLabel} > Module code </Text>
-        <TextInput value={module.ModuleCode} style={styles.itemTextInput} />
+        <TextInput value={module.ModuleCode} onChangeText={(value) => handleChange('ModuleCode',value)} style={styles.itemTextInput} />
        </View>
+
+       <View style={styles.item} >
+        <Text style={styles.itemLabel} > Module name </Text>
+        <TextInput value={module.ModuleName} onChangeText={(value) => handleChange('ModuleName',value)} style={styles.itemTextInput} />
+       </View>
+
+       <Text>{module.ModuleCode} {module.ModuleName}</Text>
+
       <ButtonTray>
         <Button label="Add" icon={<Icons.Add/>} onClick={handleAdd} />
         <Button label="Cancel" onClick={handleCancel} />
