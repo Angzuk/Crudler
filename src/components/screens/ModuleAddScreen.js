@@ -1,4 +1,4 @@
-import { StyleSheet, Text } from 'react-native';
+import { StyleSheet, Text, TextInput, View } from 'react-native';
 import Screen from '../layout/Screen';
 import Icons from '../UI/Icons';
 import { Button, ButtonTray } from '../UI/Button';
@@ -25,7 +25,10 @@ const ModuleAddScreen = ({navigation, route}) => {
   // View ------------------------------------------------------------
   return (
     <Screen>
-      <Text>Add</Text>
+       <View style={styles.item} >
+        <Text style={styles.itemLabel} > Module code </Text>
+        <TextInput style={styles.itemTextInput} />
+       </View>
       <ButtonTray>
         <Button label="Add" icon={<Icons.Add/>} onClick={handleAdd} />
         <Button label="Cancel" onClick={handleCancel} />
@@ -34,6 +37,21 @@ const ModuleAddScreen = ({navigation, route}) => {
   );
 }
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  itemLabel: {
+    color: 'grey',
+    fontSize: 16,
+    marginBottom: 5,
+  },
+  itemTextInput: {
+    height: 50,
+    paddingLeft: 10,
+    fontSize: 16,
+    backgroundColor: 'white',
+    borderRadius: 7,
+    borderWidth: 1,
+    borderColor: 'lightgray',
+  },
+});
 
 export default ModuleAddScreen;
