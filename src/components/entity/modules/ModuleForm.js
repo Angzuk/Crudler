@@ -14,7 +14,7 @@ const defaultModule = {
     ModuleImage: null, 
   }
 
-const ModuleForm = ( onSubmit, onCancel) => {
+const ModuleForm = ({ onSubmit, onCancel }) => {
     // Initialisations ---------------------
     defaultModule.ModuleID = Math.floor(100000 + Math.random() * 900000);
     defaultModule.ModuleImage = 'https://images.freeimages.com/images/small-previews/cf5/cellphone-1313194.jpg';
