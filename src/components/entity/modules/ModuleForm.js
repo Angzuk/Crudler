@@ -28,6 +28,8 @@ const ModuleForm = ( onSubmit, onCancel) => {
     const handleSubmit = () => onSubmit(module);
 
     // View --------------------------------
+    const submitLabel = 'Add';
+    const submitIcon = <Icons.Add/>;
     return (
         <View style={styles.formContainer}>
             <View style={styles.item} >
@@ -56,7 +58,7 @@ const ModuleForm = ( onSubmit, onCancel) => {
             </View>
 
             <ButtonTray>
-                <Button label="Add" icon={<Icons.Add />} onClick={handleSubmit} />
+                <Button label={submitLabel} icon={submitIcon} onClick={handleSubmit} />
                 <Button label="Cancel" onClick={onCancel} />
             </ButtonTray>
      </View>
