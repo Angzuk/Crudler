@@ -19,6 +19,13 @@ const ModuleForm = ({ onSubmit, onCancel }) => {
     defaultModule.ModuleID = Math.floor(100000 + Math.random() * 900000);
     defaultModule.ModuleImage = 'https://images.freeimages.com/images/small-previews/cf5/cellphone-1313194.jpg';
   
+    const levels = [
+        { value: 3, label: '3 (Foundation)' },
+        { value: 4, label: '4 (First year)' },
+        { value: 5, label: '5 (Second year)' },
+        { value: 6, label: '6 (Final year)' },
+        { value: 7, label: '7 (Masters)' },
+    ];
 
     // State -------------------------------
     const [module, setModule] = useState(defaultModule);
@@ -50,8 +57,10 @@ const ModuleForm = ({ onSubmit, onCancel }) => {
                 onChange={(value) => handleChange('ModuleName',value)}
             />
 
-            <Form.InputText 
+            <Form.InputSelect 
                 label="Module level"
+                prompt="Select module level ..."
+                options={levels}
                 value={module.ModuleLevel}
                 onChange={(value) => handleChange('ModuleLevel',value)}
             />
