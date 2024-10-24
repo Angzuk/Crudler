@@ -10,14 +10,13 @@ const ModuleAddScreen = ({navigation, route}) => {
 
   // State -----------------------------------------------------------
   // Handlers --------------------------------------------------------
-  const handleAdd = () => onAdd(module);
   const handleCancel = navigation.goBack;
 
 
   // View ------------------------------------------------------------
   return (
     <Screen>
-      <ModuleForm/>
+      <ModuleForm onSubmit={onAdd} onCancel={handleCancel}/>
     </Screen>
   );
 }
