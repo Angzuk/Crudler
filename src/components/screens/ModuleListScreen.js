@@ -38,7 +38,7 @@ const ModuleListScreen = ({navigation}) => {
     navigation.navigate("ModuleListScreen");
   };
 
-  const gotoViewScreen = (module) => navigation.navigate('ModuleViewScreen', { module, onDelete });
+  const gotoViewScreen = (module) => navigation.navigate('ModuleViewScreen', { module, onDelete, onModify });
   const gotoAddScreen = () => navigation.navigate('ModuleAddScreen', { onAdd });
   // View ------------------------------------------------------------
   return (
