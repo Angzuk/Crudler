@@ -9,6 +9,7 @@ import initialModules from '../../data/modules';
 const ModuleListScreen = ({navigation}) => {
   // Initialisations -------------------------------------------------
   LogBox.ignoreLogs(['Non-serializable values were found in the navigation state']);
+
   // State -----------------------------------------------------------
   const [modules, setModules] = useState(initialModules);
 
@@ -17,6 +18,10 @@ const ModuleListScreen = ({navigation}) => {
     setModules( modules.filter ( (item) => item.ModuleID !== module.ModuleID) );
 
   const handleAdd = (module) => setModules([...modules, module]);
+  
+  const handleModify = (updatedModule) => setModules(
+    modules.map((module) => (module.ModuleID === updatedModule.ModuleID) ? updatedModule : module)
+  );
 
   const onDelete = (module) => {
     handleDelete(module);
