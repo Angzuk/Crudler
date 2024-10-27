@@ -4,7 +4,7 @@ import ModuleForm from '../entity/modules/ModuleForm';
 
 const ModuleModifyScreen = ({ navigation, route }) => {
   // Initialisations -------------------------------------------------
-  const {module, onModify} = route.params;
+  const { module, onModify } = route.params;
 
   // State -----------------------------------------------------------
   // Handlers --------------------------------------------------------
