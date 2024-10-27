@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { LogBox, StyleSheet } from 'react-native';
 import Screen from '../layout/Screen';
 import API from '../API/API';
@@ -20,6 +20,8 @@ const ModuleListScreen = ({navigation}) => {
     setIsLoading(false);
     if(response.isSuccess) setModules(response.result);
   };
+  
+  useEffect( () => { loadModules(modulesEndpoint) }, [] );
   
   // Handlers --------------------------------------------------------
   const handleDelete = (module) =>
