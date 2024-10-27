@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { LogBox, StyleSheet } from 'react-native';
+import { LogBox, StyleSheet, Text } from 'react-native';
 import Screen from '../layout/Screen';
 import API from '../API/API';
 import ModuleList from '../entity/modules/ModuleList';
@@ -56,6 +56,9 @@ const ModuleListScreen = ({navigation}) => {
       <ButtonTray>
         <Button label="Add" icon={<Icons.Add/>} onClick={gotoAddScreen} />
       </ButtonTray>
+      {
+        isLoading && <Text>Loading records ...</Text>
+      }
       < ModuleList modules={modules} onSelect={gotoViewScreen}/>
     </Screen>
   );
