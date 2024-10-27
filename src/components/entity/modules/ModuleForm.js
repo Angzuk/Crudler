@@ -1,6 +1,6 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { StyleSheet } from "react-native";
-import API from '../../API/API';
+import useLoad from '../../API/useLoad';
 import Icons from '../../UI/Icons';
 import Form from '../../UI/Form';
 
@@ -34,26 +34,18 @@ const ModuleForm = ({ originalModule, onSubmit, onCancel }) => {
     // State -------------------------------
     const [module, setModule] = useState(originalModule || defaultModule);
 
-    const [years, setYears] = useState([]); 
-    const [isYearsLoading, setIsYearsLoading] = useState(true);
-
-    const loadYears = async (endpoint) => {
-        const response = await API.get(endpoint);
-        setIsYearsLoading(false);
-        if(response.isSuccess) setYears(response.result);
-      };
-      
-      useEffect( () => { loadYears(yearsEndpoint) }, [] );
+    const [years, isYearsLoading] = useLoad(yearsEndpoint);
 
     // Handlers ----------------------------
     const handleChange = (field, value) => setModule( {...module, [field]: value } );
     const handleSubmit = () => onSubmit(module);
 
-    const cohorts = years.map((year) => ({ value: year.YearID, label: year.YearName }));
-
     // View --------------------------------
     const submitLabel = originalModule ? 'Modify' : 'Add';
     const submitIcon = originalModule ? <Icons.Edit/> : <Icons.Add/>;
+
+    const cohorts = years.map((year) => ({ value: year.YearID, label: year.YearName }));
+
     return (
         <Form 
             onSubmit={handleSubmit} 
