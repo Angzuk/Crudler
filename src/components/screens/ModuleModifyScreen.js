@@ -8,15 +8,15 @@ const ModuleModifyScreen = ({ navigation, route }) => {
 
   // State -----------------------------------------------------------
   // Handlers --------------------------------------------------------
-  const handleCancel = () => navigation.navigate.goBack;
+  const handleCancel = navigation.goBack;
 
   // View ------------------------------------------------------------
   return (
     <Screen>
-      < ModuleForm originalModule={module} onCancel={handleCancel} onSubmit={onModify}/>
+      < ModuleForm originalModule={module} onCancel={handleCancel} onSubmit={onModify} />
     </Screen>
   );
-}
+};
 
 const styles = StyleSheet.create({});
 
