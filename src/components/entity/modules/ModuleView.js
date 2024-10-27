@@ -27,6 +27,7 @@ return (
           {module.ModuleCode} {module.ModuleName}
         </Text>
         <Text style={styles.text}>Level {module.ModuleLevel}</Text>
+        <Text style={styles.text}>Cohort {module.ModuleYearName}</Text>
         <Text style={styles.text}>{module.ModuleLeaderName} <Text style={styles.dimText}> (Module Leader)</Text></Text>
       </View>
       <ButtonTray>
