@@ -9,9 +9,17 @@ import { Button, ButtonTray } from '../UI/Button';
 const ModuleListScreen = ({navigation}) => {
   // Initialisations -------------------------------------------------
   LogBox.ignoreLogs(['Non-serializable values were found in the navigation state']);
+  const modulesEndpoint = 'https://softwarehub.uk/unibase/api/modules';
 
   // State -----------------------------------------------------------
   const [modules, setModules] = useState([]); 
+  const [isLoading, setIsLoading] = useState(true);
+
+  const loadModules = async (endpoint) => {
+    const response = await API.get(endpoint);
+    setIsLoading(false);
+    if(response.isSuccess) setModules(response.result);
+  };
   
   // Handlers --------------------------------------------------------
   const handleDelete = (module) =>
