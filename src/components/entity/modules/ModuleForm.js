@@ -12,7 +12,6 @@ const defaultModule = {
     ModuleLevel: null,
     ModuleYearID: null,
     ModuleLeaderID: null,
-    ModuleLeaderName: null,
     ModuleImageURL: null, 
   }
 
@@ -22,6 +21,7 @@ const ModuleForm = ({ originalModule, onSubmit, onCancel }) => {
     defaultModule.ModuleImageURL = 'https://images.freeimages.com/images/small-previews/cf5/cellphone-1313194.jpg';
 
     const yearsEndpoint = 'https://softwarehub.uk/unibase/api/years';
+    const staffEndpoint = 'https://softwarehub.uk/unibase/api/users/staff';
 
     const levels = [
         { value: 3, label: '3 (Foundation)' },
@@ -36,6 +36,8 @@ const ModuleForm = ({ originalModule, onSubmit, onCancel }) => {
 
     const [years, isYearsLoading] = useLoad(yearsEndpoint);
 
+    const [leaders, isLeadersLoading] = useLoad(staffEndpoint);
+
     // Handlers ----------------------------
     const handleChange = (field, value) => setModule( {...module, [field]: value } );
     const handleSubmit = () => onSubmit(module);
@@ -45,6 +47,7 @@ const ModuleForm = ({ originalModule, onSubmit, onCancel }) => {
     const submitIcon = originalModule ? <Icons.Edit/> : <Icons.Add/>;
 
     const cohorts = years.map((year) => ({ value: year.YearID, label: year.YearName }));
+    const staff = leaders.map((leader) => ({ value: leader.UserID, label: `${leader.UserFirstname} ${leader.UserLastname}`}));
 
     return (
         <Form 
@@ -83,10 +86,13 @@ const ModuleForm = ({ originalModule, onSubmit, onCancel }) => {
                 isLoading = {isYearsLoading}
             />
 
-            <Form.InputText 
+            <Form.InputSelect 
                 label="Module leader"
-                value={module.ModuleLeaderName}
-                onChange={(value) => handleChange('ModuleLeaderName',value)}
+                prompt="Select module leader ..."
+                options={staff}
+                value={module.ModuleLeaderID}
+                onChange={(value) => handleChange('ModuleLeaderID',value)}
+                isLoading = {isLeadersLoading}
             />
 
             <Form.InputText 
